@@ -3,7 +3,7 @@ import { ClientRouter } from "astro:transitions";
 
 import "../styles/global.css";
 
-import { SEO } from "astro-seo";
+// import { SEO } from "astro-seo";
 
 import SmoothScroll from "../components/SmoothScroll.astro";
 import Header from "../components/Header.astro";
@@ -21,13 +21,15 @@ type Props = {
 
 const { title, description = "Players Club Concept" } = Astro.props;
 
-// Current page value (/home, /about, /404 ...)
 const currentPage =
   Astro.url.pathname.replace(/\/$/, "").split("/").pop() || "home";
 ---
+
 <!doctype html>
 <html lang="en" data-page={currentPage}>
   <head>
+
+    {/*
     <SEO
       title={title}
       description={description}
@@ -82,8 +84,11 @@ const currentPage =
         ],
       }}
     />
+    */}
+
     <ClientRouter />
   </head>
+
   <body>
     <SmoothScroll />
     <Header />
