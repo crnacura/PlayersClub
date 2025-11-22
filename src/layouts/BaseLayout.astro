@@ -12,7 +12,7 @@ import Footer from "../components/Footer.astro";
 import "@fontsource-variable/instrument-sans";
 import instrumentSansWoff2 from "@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2";
 
-const base = Astro.site?.pathname ?? '/';
+const base = Astro.site?.href ?? '/';
 
 type Props = {
   title: string;
