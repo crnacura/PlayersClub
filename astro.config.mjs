@@ -1,17 +1,23 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
 import sitemap from '@astrojs/sitemap';
+import github from '@astrojs/github';
 
-// https://astro.build/config
 export default defineConfig({
   devToolbar: {
-    enabled: false
+    enabled: false,
   },
   prefetch: true,
-  site: 'https://playersclub88.netlify.app/',
+
+  // GitHub Pages configuration
+  site: 'https://crnacura.github.io/PlayersClub/',
+  base: '/PlayersClub/',
+
   integrations: [sitemap()],
   experimental: {
     svg: true,
   },
+
+  output: 'static',
+  adapter: github(),
 });
