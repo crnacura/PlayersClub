@@ -3,7 +3,7 @@ import { ClientRouter } from "astro:transitions";
 
 import "../styles/global.css";
 
-// import { SEO } from "astro-seo";
+import { SEO } from "astro-seo";
 
 import SmoothScroll from "../components/SmoothScroll.astro";
 import Header from "../components/Header.astro";
@@ -12,8 +12,6 @@ import Footer from "../components/Footer.astro";
 import "@fontsource-variable/instrument-sans";
 import instrumentSansWoff2 from "@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2";
 
-const base = Astro.site?.href ?? '/';
-
 type Props = {
   title: string;
   description?: string;
@@ -21,6 +19,7 @@ type Props = {
 
 const { title, description = "Players Club Concept" } = Astro.props;
 
+// Current page value (/home, /about, /404 ...)
 const currentPage =
   Astro.url.pathname.replace(/\/$/, "").split("/").pop() || "home";
 ---
@@ -28,8 +27,6 @@ const currentPage =
 <!doctype html>
 <html lang="en" data-page={currentPage}>
   <head>
-
-    {/*
     <SEO
       title={title}
       description={description}
@@ -38,33 +35,34 @@ const currentPage =
         basic: {
           title: title,
           type: "image/jpeg",
-          image: `${base}playersclub-og.jpg`,
+          image: "./playersclub-og.jpg",
         },
       }}
       twitter={{
         creator: "@codrops",
       }}
       extend={{
+        // extending the default link tags
         link: [
           {
             rel: "icon",
             type: "image/png",
             sizes: "16x16",
-            href: `${base}favicon/favicon-16x16.png`,
+            href: "./favicon/favicon-16x16.png",
           },
           {
             rel: "icon",
             type: "image/png",
             sizes: "32x32",
-            href: `${base}favicon/favicon-32x32.png`,
+            href: "./favicon/favicon-32x32.png",
           },
           {
             rel: "apple-touch-icon",
             sizes: "180x180",
-            href: `${base}favicon/apple-touch-icon.png`,
+            href: "./favicon/apple-touch-icon.png",
           },
-          { rel: "manifest", href: `${base}favicon/site.webmanifest` },
-          { rel: "sitemap", href: `${base}sitemap-index.xml` },
+          { rel: "manifest", href: "./favicon/site.webmanifest" },
+          { rel: "sitemap", href: "./sitemap-index.xml" },
           {
             rel: "preload",
             href: instrumentSansWoff2,
@@ -73,8 +71,9 @@ const currentPage =
             crossorigin: "anonymous",
           },
         ],
+        // extending the default meta tags
         meta: [
-          { name: "twitter:image", content: `${base}playersclub-og.jpg` },
+          { name: "twitter:image", content: "./playersclub-og.jpg" },
           { name: "twitter:title", content: title },
           { name: "twitter:description", content: description },
           { name: "viewport", content: "width=device-width" },
@@ -84,11 +83,8 @@ const currentPage =
         ],
       }}
     />
-    */}
-
     <ClientRouter />
   </head>
-
   <body>
     <SmoothScroll />
     <Header />
