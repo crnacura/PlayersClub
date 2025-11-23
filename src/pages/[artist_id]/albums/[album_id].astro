@@ -63,7 +63,7 @@ const { Content } = await render(album);
         {album.data.name}
         <span class="faded">by {artist.data.stage_name}</span>
       </h2>
-      <div><a class="back" href={`./${artist.id}`}>Back to artist</a></div>
+      <div><a class="back" href={`/${artist.id}`}>Back to artist</a></div>
     </header>
     <Separator />
     <div class="content-wrap">

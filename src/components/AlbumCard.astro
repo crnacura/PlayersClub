@@ -8,7 +8,7 @@ type Props = {
 const { album } = Astro.props;
 ---
 
-<a class="album-card" href={`./${album.data.artist.id}/albums/${album.id}`}>
+<a class="album-card" href={`/${album.data.artist.id}/albums/${album.id}`}>
   <div>
     <img
       class="fade-in"
