@@ -19,6 +19,7 @@
     "lenis": "^1.1.17"
   },
   "devDependencies": {
-    "@types/imagesloaded": "^4.1.6"
+    "@types/imagesloaded": "^4.1.6",
+    "wrangler": "^4.50.0"
   }
 }
