@@ -6,7 +6,7 @@ Players Club is a free Astro template for showcasing music artists—an experime
 
 [Article on Codrops](https://tympanus.net/codrops/?p=86632)
 
-[Demo](https://playersclub88.netlify.app/)
+[Demo](https://playersclub.crnacura.workers.dev/)
 
 ## Commands
 
